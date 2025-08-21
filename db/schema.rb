@@ -22,7 +22,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_142239) do
     t.json "endereco"
     t.integer "papel"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

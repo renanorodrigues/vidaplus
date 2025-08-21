@@ -8,7 +8,7 @@ class CreateUsuarios < ActiveRecord::Migration[8.0]
       t.json :endereco
       t.integer :papel
       t.string :email
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end
