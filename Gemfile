@@ -11,7 +11,7 @@ gem "bootsnap", require: false
 gem "kamal", require: false
 gem "thruster", require: false
 gem "bcrypt"
-gem "jwt", "~> 1.5", ">= 1.5.4"
+gem "jwt", "~> 3.1"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
