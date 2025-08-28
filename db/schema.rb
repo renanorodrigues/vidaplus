@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_21_142239) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_28_213028) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "especialidade_medicas", force: :cascade do |t|
+    t.string "titulo"
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", force: :cascade do |t|
+    t.bigint "usuario_id", null: false
+    t.string "rg"
+    t.string "cpf"
+    t.string "contato"
+    t.string "contato_emergencia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_pacientes_on_usuario_id"
+  end
+
+  create_table "profissionais", force: :cascade do |t|
+    t.string "contato"
+    t.string "email_profissional"
+    t.boolean "estado"
+    t.text "biografia"
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_profissionais_on_usuario_id"
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "primeiro_nome"
@@ -20,10 +49,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_142239) do
     t.string "sexo"
     t.string "idade"
     t.json "endereco"
-    t.integer "papel"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "pacientes", "usuarios"
+  add_foreign_key "profissionais", "usuarios"
 end
