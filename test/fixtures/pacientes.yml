@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  rg: MyString
+  cpf: MyString
+  contato: MyString
+  contato_emergencia: MyString
+
+two:
+  usuario: two
+  rg: MyString
+  cpf: MyString
+  contato: MyString
+  contato_emergencia: MyString
