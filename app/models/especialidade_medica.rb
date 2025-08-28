@@ -1,0 +1,2 @@
+class EspecialidadeMedica < ApplicationRecord
+end
