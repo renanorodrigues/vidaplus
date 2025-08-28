@@ -6,7 +6,6 @@ class CreateUsuarios < ActiveRecord::Migration[8.0]
       t.string :sexo
       t.string :idade
       t.json :endereco
-      t.integer :papel
       t.string :email
       t.string :password_digest
 
