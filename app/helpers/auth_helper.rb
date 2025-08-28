@@ -14,4 +14,8 @@ module AuthHelper
       exp: TOKEN_EXPIRATION_TIME.to_i
     }
   end
+
+  def decode_token
+    JWT.decode(token, ENV['JWT_SECRET'])[0]
+  end
 end
