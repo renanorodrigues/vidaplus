@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_28_213028) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_11_212742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "administradores", force: :cascade do |t|
+    t.string "rg"
+    t.string "contato"
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_administradores_on_usuario_id"
+  end
+
+  create_table "agendas", force: :cascade do |t|
+    t.datetime "data_inicio"
+    t.datetime "data_termino"
+    t.string "observacao"
+    t.json "horarios"
+    t.boolean "estado"
+    t.bigint "profissional_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profissional_id"], name: "index_agendas_on_profissional_id"
+  end
 
   create_table "especialidade_medicas", force: :cascade do |t|
     t.string "titulo"
@@ -30,6 +51,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_28_213028) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["usuario_id"], name: "index_pacientes_on_usuario_id"
+  end
+
+  create_table "pedido_agendamentos", force: :cascade do |t|
+    t.string "observacao"
+    t.datetime "data_marcacao"
+    t.boolean "estado"
+    t.bigint "usuario_id", null: false
+    t.bigint "profissional_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profissional_id"], name: "index_pedido_agendamentos_on_profissional_id"
+    t.index ["usuario_id"], name: "index_pedido_agendamentos_on_usuario_id"
   end
 
   create_table "profissionais", force: :cascade do |t|
@@ -55,6 +88,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_28_213028) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "administradores", "usuarios"
+  add_foreign_key "agendas", "profissionais"
   add_foreign_key "pacientes", "usuarios"
+  add_foreign_key "pedido_agendamentos", "profissionais"
+  add_foreign_key "pedido_agendamentos", "usuarios"
   add_foreign_key "profissionais", "usuarios"
 end
