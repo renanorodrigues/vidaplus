@@ -7,6 +7,7 @@ class CreateAgendas < ActiveRecord::Migration[8.0]
       t.json :horarios
       t.boolean :estado
       t.references :profissional, null: false, foreign_key: true
+      t.references :unidade_medica, null: false, foreign_key: true
 
       t.timestamps
     end
