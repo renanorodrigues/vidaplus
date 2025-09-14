@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_14_200450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "administradores", force: :cascade do |t|
-    t.string "rg"
+    t.string "nome_completo"
     t.string "contato"
     t.bigint "usuario_id", null: false
     t.datetime "created_at", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
     t.datetime "data_termino"
     t.string "observacao"
     t.json "horarios"
-    t.boolean "estado"
+    t.integer "estado", default: 0
     t.bigint "profissional_id", null: false
     t.bigint "unidade_medica_id", null: false
     t.datetime "created_at", null: false
@@ -37,23 +37,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
     t.index ["unidade_medica_id"], name: "index_agendas_on_unidade_medica_id"
   end
 
-  create_table "especialidade_medica_profissionais", force: :cascade do |t|
-    t.bigint "especialidade_medica_id", null: false
-    t.bigint "profissional_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["especialidade_medica_id"], name: "idx_on_especialidade_medica_id_4b9ac90dd3"
-    t.index ["profissional_id"], name: "index_especialidade_medica_profissionais_on_profissional_id"
-  end
-
-  create_table "especialidade_medicas", force: :cascade do |t|
-    t.string "titulo"
-    t.text "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pacientes", force: :cascade do |t|
+    t.string "nome_completo"
+    t.string "sexo"
+    t.string "idade"
+    t.json "endereco"
     t.string "rg"
     t.string "cpf"
     t.string "contato"
@@ -65,25 +53,28 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
     t.index ["usuario_id"], name: "index_pacientes_on_usuario_id"
   end
 
-  create_table "pedido_agendamentos", force: :cascade do |t|
+  create_table "pedidos", force: :cascade do |t|
     t.string "observacao"
     t.datetime "data_marcacao"
-    t.boolean "estado"
-    t.bigint "usuario_id", null: false
+    t.integer "estado", default: 0
+    t.integer "tipo_consulta"
+    t.bigint "paciente_id", null: false
     t.bigint "profissional_id", null: false
     t.bigint "unidade_medica_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profissional_id"], name: "index_pedido_agendamentos_on_profissional_id"
-    t.index ["unidade_medica_id"], name: "index_pedido_agendamentos_on_unidade_medica_id"
-    t.index ["usuario_id"], name: "index_pedido_agendamentos_on_usuario_id"
+    t.index ["paciente_id"], name: "index_pedidos_on_paciente_id"
+    t.index ["profissional_id"], name: "index_pedidos_on_profissional_id"
+    t.index ["unidade_medica_id"], name: "index_pedidos_on_unidade_medica_id"
   end
 
   create_table "profissionais", force: :cascade do |t|
+    t.string "nome_completo"
     t.string "contato"
     t.string "email_profissional"
-    t.boolean "estado"
     t.text "biografia"
+    t.integer "ocupacao"
+    t.json "especialidades_medicas"
     t.bigint "usuario_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,6 +90,34 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
     t.index ["unidade_medica_id"], name: "index_profissional_unidade_medicas_on_unidade_medica_id"
   end
 
+  create_table "prontuarios", force: :cascade do |t|
+    t.json "historico_clinico"
+    t.text "observacao"
+    t.bigint "paciente_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_prontuarios_on_paciente_id"
+  end
+
+  create_table "receitas", force: :cascade do |t|
+    t.json "prescricao"
+    t.text "observacao"
+    t.bigint "profissional_id", null: false
+    t.bigint "paciente_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_receitas_on_paciente_id"
+    t.index ["profissional_id"], name: "index_receitas_on_profissional_id"
+  end
+
+  create_table "relatorios", force: :cascade do |t|
+    t.integer "tipo"
+    t.string "assunto"
+    t.text "conteudo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "unidade_medicas", force: :cascade do |t|
     t.string "nome_fantasia"
     t.string "cnpj"
@@ -108,13 +127,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.string "primeiro_nome"
-    t.string "ultimo_nome"
-    t.string "sexo"
-    t.string "idade"
-    t.json "endereco"
     t.string "email"
     t.string "password_digest"
+    t.integer "estado", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -122,13 +137,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_13_221105) do
   add_foreign_key "administradores", "usuarios"
   add_foreign_key "agendas", "profissionais"
   add_foreign_key "agendas", "unidade_medicas"
-  add_foreign_key "especialidade_medica_profissionais", "especialidade_medicas"
-  add_foreign_key "especialidade_medica_profissionais", "profissionais"
   add_foreign_key "pacientes", "usuarios"
-  add_foreign_key "pedido_agendamentos", "profissionais"
-  add_foreign_key "pedido_agendamentos", "unidade_medicas"
-  add_foreign_key "pedido_agendamentos", "usuarios"
+  add_foreign_key "pedidos", "pacientes"
+  add_foreign_key "pedidos", "profissionais"
+  add_foreign_key "pedidos", "unidade_medicas"
   add_foreign_key "profissionais", "usuarios"
   add_foreign_key "profissional_unidade_medicas", "profissionais"
   add_foreign_key "profissional_unidade_medicas", "unidade_medicas"
+  add_foreign_key "prontuarios", "pacientes"
+  add_foreign_key "receitas", "pacientes"
+  add_foreign_key "receitas", "profissionais"
 end
