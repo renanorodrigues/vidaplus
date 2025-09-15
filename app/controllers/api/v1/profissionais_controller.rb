@@ -1,13 +1,48 @@
-class Api::V1::ProfissionaisController < ApplicationController
-  def create
-  end
+module Api
+  module V1
+    class ProfissionaisController < ApplicationController
+      before_action :find_profissional, only: %i[show update destroy]
 
-  def show
-  end
+      def index
+        @profissionais = Profissional.all
 
-  def update
-  end
+        render json: @profissionais, status: :ok
+      end
 
-  def destroy
+      def create
+        @profissional = Profissional.new profissional_params
+
+        if @profissional.valid?
+          @profissional.save
+          render json: @profissional, status: :created
+        else
+          render json: @profissional.errors, status: :unprocessable_content
+        end
+      end
+
+      def show; end
+
+      def update
+        if @profissional.update(profissional_params)
+          render json: @profissional, status: :ok
+        else
+          render json: @profissional, status: :unprocessable_content
+        end
+      end
+
+      def destroy
+        @profissional.destroy
+      end
+
+      private
+
+      def find_profissional
+        @profissional = Profissional.find params[:id]
+      end
+
+      def profissional_params
+        params.require(:profissional).permit(:nome_completo, :contato, :email_profissional, :biografia, :ocupacao, especialidades_medicas: [especialidade: [], observacao: []])
+      end
+    end
   end
 end
