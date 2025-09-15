@@ -32,7 +32,6 @@ module Api
     
       def destroy
         @paciente.destroy
-        redirect_to pacientes_path
       end
     
       private
@@ -42,7 +41,7 @@ module Api
       end
   
       def paciente_params
-          params.require(:paciente).permit(:nome_completo, :rg, :cpf, :sexo, :idade, :contato, :contato_emergencia, :usuario_id, :prontuario_id, endereco: [:rua, :numero, :bairro, :cidade, :estado, :cep])
+        params.require(:paciente).permit(:nome_completo, :rg, :cpf, :sexo, :idade, :contato, :contato_emergencia, :usuario_id, :prontuario_id, endereco: [:rua, :numero, :bairro, :cidade, :estado, :cep])
       end
     end
   end
