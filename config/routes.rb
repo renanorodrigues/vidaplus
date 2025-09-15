@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :usuarios
+      resources :pacientes do
+        resources :prontuarios, only: :create
+        resources :pedidos
+      end
     end
   end
 end

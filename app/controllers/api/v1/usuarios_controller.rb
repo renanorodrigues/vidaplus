@@ -3,6 +3,7 @@ module Api
     class UsuariosController < ApplicationController
       # TODO: Implementa depois a autenticação
       #before_action :authenticate_user
+      before_action :set_usuario, only: %i[update destroy]
 
       def create
         @usuario = Usuario.new usuario_params
@@ -14,18 +15,26 @@ module Api
         end
       end
 
-      def show
-        render json: { user: find_user_data }, status: :ok
+      def update
+        if @usuario.update usuario_params
+          render json: @usuario, status: :ok
+        else
+          render json: @usuario, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        @usuario.destroy!
       end
 
       private
 
-      def find_user_data
-        params[:session_user].slice(:primeiro_nome, :email, :created_at)
+      def set_usuario
+        @usuario = Usuario.find params[:id]
       end
 
       def usuario_params
-        params.expect(usuario: %w[primeiro_nome email password])
+        params.expect(usuario: %w[email password])
       end
     end
   end
