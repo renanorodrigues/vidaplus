@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :usuarios
+      resources :agendas
       resources :profissionais do
-        resources :agendas, only: :create
         resources :receitas, only: :create
       end
       resources :pacientes do
