@@ -1,5 +1,5 @@
 class UnidadeMedica < ApplicationRecord
-  has_many :pacientes, optional: true
+  has_many :pacientes
   has_many :profissionais, through: :profissional_unidade_medicas
   has_many :pedidos
   has_many :agendas
