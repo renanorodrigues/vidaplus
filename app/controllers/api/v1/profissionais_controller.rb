@@ -41,7 +41,7 @@ module Api
       end
 
       def profissional_params
-        params.require(:profissional).permit(:nome_completo, :contato, :email_profissional, :biografia, :ocupacao, especialidades_medicas: [especialidade: [], observacao: []])
+        params.require(:profissional).permit(:nome_completo, :contato, :email_profissional, :usuario_id, :biografia, :ocupacao, especialidades_medicas: [:especialidade, :observacao])
       end
     end
   end
