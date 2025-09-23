@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :usuarios
+      resources :administradores
       resources :unidade_medicas
       resources :agendas
       resources :profissionais do
