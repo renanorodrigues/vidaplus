@@ -20,7 +20,9 @@ Rails.application.routes.draw do
       end
       resources :pacientes do
         resources :prontuarios, only: :create
-        resources :pedidos
+        resources :pedidos do
+          resources :consultas, only: %i[create show update]
+        end
       end
     end
   end
