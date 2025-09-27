@@ -1,9 +1,10 @@
 module AuthHelper
   require 'jwt'
   TOKEN_EXPIRATION_TIME = 15.minutes.from_now
+  SECRET_KEY = Rails.application.credentials.secret_key_base
 
   def encode_token(user)
-    token = JWT.encode(build_encode(user), ENV['JWT_SECRET'], 'HS256')
+    token = JWT.encode(build_encode(user), SECRET_KEY, 'HS256')
 
     { token: token, exp: TOKEN_EXPIRATION_TIME }
   end
@@ -15,7 +16,7 @@ module AuthHelper
     }
   end
 
-  def decode_token
-    JWT.decode(token, ENV['JWT_SECRET'])[0]
+  def decode_token(token)
+    JWT.decode(token, SECRET_KEY)[0]
   end
 end

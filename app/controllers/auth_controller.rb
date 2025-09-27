@@ -1,13 +1,23 @@
 class AuthController < ApplicationController
   def signin
-    result = auth_service.call
+    result = signin_auth_service.call
 
-    render json: { info: result }, status: :ok
+    render_result result
+  end
+
+  def signup
+    result = signup_auth_service.call
+
+    render_result result
   end
 
   private
 
-  def auth_service
-    Auth::Signin.new(params)
+  def signin_auth_service
+    Auth::Signin.new params
+  end
+
+  def signup_auth_service
+    Auth::Signup.new params
   end
 end

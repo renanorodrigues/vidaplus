@@ -2,9 +2,17 @@ module Auth
   class Signin
     include AuthHelper
 
+    def initialize(params)
+      @params = params
+    end
+
     def call
       find_user
       authenticate
+    rescue StandardError => e
+      { error: e.message, status_code: 400 }
+    rescue Exception => e
+      { error: e.message, status_code: 500 }
     end
 
     private
@@ -13,7 +21,7 @@ module Auth
       if @user&.authenticate(@params[:password])
         encode_token(@user)
       else
-        raise 'senha ou email inválidos'
+        raise StandardError, 'senha ou email inválidos'
       end
     end
 

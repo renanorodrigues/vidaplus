@@ -1,8 +1,7 @@
 module Api
   module V1
     class AdministradoresController < ApplicationController
-      # TODO: Implementar autenticação futuramente
-      # before_action :authenticate_user
+      before_action :authenticate_user
       before_action :set_administrador, only: %i[ show update destroy ]
 
       def index
