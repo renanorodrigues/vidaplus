@@ -1,8 +1,8 @@
 module Api
   module V1
-    class AdministradoresController < ApplicationController
-      before_action :authenticate_user
-      before_action :set_administrador, only: %i[ show update destroy ]
+    class AdministradoresController < AccessPermissionsController
+      before_action :autentica_admin
+      before_action :find_administrador, only: %i[ show update destroy ]
 
       def index
         @administradores = Administrador.all
@@ -38,7 +38,7 @@ module Api
 
       private
 
-      def set_administrador
+      def find_administrador
         @administrador = Administrador.find(params[:id])
       end
 
