@@ -1,13 +1,13 @@
 module RolesHelper
-  def admin?(usuario)
-    usuario.administrador.present?
+  def admin?
+    current_user.administrador.present?
   end
 
-  def profissional?(usuario)
-    usuario.profissional.present?
+  def profissional?
+    current_user.profissional.present?
   end
 
-  def paciente?(usuario)
-    usuario.paciente.present?
+  def paciente?
+    current_user.paciente.present?
   end
 end
