@@ -1,6 +1,7 @@
 module Api
   module V1
-    class ProntuariosController < ApplicationController
+    class ProntuariosController < AccessPermissionsController
+      before_action :autentica_profissional
       before_action :find_paciente, only: :create
 
       def create

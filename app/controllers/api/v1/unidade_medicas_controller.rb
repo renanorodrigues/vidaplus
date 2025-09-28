@@ -1,6 +1,7 @@
 module Api
   module V1
-    class UnidadeMedicasController < ApplicationController
+    class UnidadeMedicasController < AccessPermissionsController
+      before_action :autentica_admin
       before_action :find_unidade_medica, only: %i[show update destroy]
 
       def index

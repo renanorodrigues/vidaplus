@@ -1,12 +1,12 @@
 module Api
   module V1
-    class PacientesController < ApplicationController
-      # TODO: Implementa depois a autenticação
-      #before_action :authenticate_user
-      before_action :set_paciente, only: %i[ show update destroy ]
+    class PacientesController < AccessPermissionsController
+      before_action :autentica_admin, only: %i[ index destroy ]
+      before_action :find_paciente, only: %i[ show update destroy ]
 
       def index
         @pacientes = Paciente.all
+        render json: @pacientes
       end
     
       def show; end
@@ -36,7 +36,7 @@ module Api
     
       private
 
-      def set_paciente
+      def find_paciente
         @paciente = Paciente.find params[:id]
       end
   

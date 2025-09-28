@@ -1,6 +1,7 @@
 module Api
   module V1
-    class ProfissionaisController < ApplicationController
+    class ProfissionaisController < AccessPermissionsController
+      before_action :autentica_admin
       before_action :find_profissional, only: %i[show update destroy]
 
       def index

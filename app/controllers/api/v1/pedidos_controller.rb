@@ -1,6 +1,7 @@
 module Api
   module V1
-    class PedidosController < ApplicationController
+    class PedidosController < AccessPermissionsController
+      before_action :autentica_paciente
       before_action :find_pedido, only: [:show, :update, :destroy]
 
       def index

@@ -1,8 +1,8 @@
 module Api
   module V1
-    class ConsultasController < ApplicationController
-      before_action :set_pedido
-      before_action :set_consulta, only: [:show, :update]
+    class ConsultasController < AccessPermissionsController
+      before_action :find_pedido
+      before_action :find_consulta, only: [:show, :update]
 
       def show
         render json: @consulta
@@ -27,11 +27,11 @@ module Api
 
       private
 
-      def set_pedido
+      def find_pedido
         @pedido = Pedido.find(params[:pedido_id])
       end
 
-      def set_consulta
+      def find_consulta
         @consulta = Consulta.find(params[:id])
       end
 

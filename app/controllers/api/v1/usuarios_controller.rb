@@ -1,19 +1,8 @@
 module Api
   module V1
-    class UsuariosController < ApplicationController
-      # TODO: Implementa depois a autenticação
-      #before_action :authenticate_user
-      before_action :set_usuario, only: %i[update destroy]
-
-      def create
-        @usuario = Usuario.new usuario_params
-
-        if @usuario.save
-          render json: @usuario, status: :created
-        else
-          render json: @usuario, status: :unprocessable_entity
-        end
-      end
+    class UsuariosController < AccessPermissionsController
+      before_action :autentica_admin
+      before_action :find_usuario, only: %i[update destroy]
 
       def update
         if @usuario.update usuario_params
@@ -29,7 +18,7 @@ module Api
 
       private
 
-      def set_usuario
+      def find_usuario
         @usuario = Usuario.find params[:id]
       end
 

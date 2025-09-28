@@ -1,6 +1,7 @@
 module Api
   module V1
-    class AgendasController < ApplicationController
+    class AgendasController < AccessPermissionsController
+      before_action :autentica_profissional
       before_action :find_agenda, only: %i[show update destroy]
 
       def index
