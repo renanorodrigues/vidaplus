@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
   include AuthHelper
 
-  before_action :set_paper_trail_whodunnit
-
   def authenticate_user
     token = request.headers['Authorization']&.split(' ')&.last
     decoded_token = decode_token(token)
@@ -21,9 +19,5 @@ class ApplicationController < ActionController::API
     else
       render json: result
     end
-  end
-
-  def params
-    request.params
   end
 end
