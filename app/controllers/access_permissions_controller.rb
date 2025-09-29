@@ -2,6 +2,7 @@ class AccessPermissionsController < ApplicationController
   include RolesHelper
 
   before_action :authenticate_user
+  before_action :set_paper_trail_whodunnit
 
   %i[admin paciente profissional].each do |role|
     define_method("autentica_#{role}") do
