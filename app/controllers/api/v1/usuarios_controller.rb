@@ -23,7 +23,7 @@ module Api
       end
 
       def usuario_params
-        params.expect(usuario: %w[email password])
+        params.expect(usuario: %i[email password])
       end
     end
   end
