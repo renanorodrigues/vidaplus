@@ -12,6 +12,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 gem "bcrypt"
 gem "jwt", "~> 1.5", ">= 1.5.4"
+gem "paper_trail", "~> 16.0"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
