@@ -3,6 +3,7 @@ class Usuario < ApplicationRecord
   has_one :profissional
   has_one :paciente
   has_secure_password
+  has_paper_trail
 
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }

@@ -3,6 +3,7 @@ class Paciente < ApplicationRecord
   has_many :prontuarios
   has_many :receitas
   has_many :pedidos
+  has_paper_trail
 
   validates :nome_completo, presence: true, length: { minimum: 2 }
   validates :rg, presence: true, uniqueness: true, length: { minimum: 8 }
