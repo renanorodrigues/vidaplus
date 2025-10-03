@@ -1,6 +1,6 @@
 module Api
   module V1
-    class AuditsController < AccessPermissionsController
+    class AuditoriasController < AccessPermissionsController
       before_action :autentica_admin
 
       def index
