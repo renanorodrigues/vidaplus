@@ -31,7 +31,7 @@ module Api
       end
 
       def destroy
-        @pedido.destroy
+        @pedido.destroy!
         head :no_content
       end
 
