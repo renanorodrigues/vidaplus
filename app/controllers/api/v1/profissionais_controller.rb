@@ -15,6 +15,7 @@ module Api
 
         if @profissional.valid?
           @profissional.save
+          linked_profissional_to_unidade_medica
           render json: @profissional, status: :created
         else
           render json: @profissional.errors, status: :unprocessable_content
@@ -37,12 +38,18 @@ module Api
 
       private
 
+      def linked_profissional_to_unidade_medica
+        return if params[:unidade_medica_id].blank?
+
+        ProfissionalUnidadeMedica.find_or_create_by(unidade_medica_id: params[:unidade_medica_id], profissional_id: @profissional.id)
+      end
+
       def find_profissional
         @profissional = Profissional.find params[:id]
       end
 
       def profissional_params
-        params.require(:profissional).permit(:nome_completo, :contato, :email_profissional, :usuario_id, :biografia, :ocupacao, especialidades_medicas: [:especialidade, :observacao])
+        params.require(:profissional).permit(:nome_completo, :contato, :email_profissional, :usuario_id, :unidade_medica_id, :biografia, :ocupacao, especialidades_medicas: [:especialidade, :observacao])
       end
     end
   end

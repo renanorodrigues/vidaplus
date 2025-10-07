@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       resources :auditorias, only: %i[index show]
       resources :usuarios
       resources :administradores
-      resources :unidade_medicas
+      resources :unidade_medicas do
+        resources :profissionais, only: :create
+      end
       resources :profissionais do
         resources :agendas
         resources :receitas, only: :create
