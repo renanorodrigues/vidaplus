@@ -1,0 +1,87 @@
+pt-BR:
+  activerecord:
+    models:
+      administrador: Administrador
+      agenda: Agenda
+      consulta: Consulta
+      especialidade_medica: Especialidade Médica
+      paciente: Paciente
+      pedido: Pedido
+      profissional: Profissional
+      profissional_unidade_medica: Profissional da Unidade Médica
+      prontuario: Prontuário
+      unidade_medica: Unidade Médica
+      usuario: Usuário
+      post: Postagem
+    attributes:
+      administrador:
+        nome: Nome
+        email: E-mail
+        senha: Senha
+      agenda:
+        data: Data
+        horario: Horário
+        profissional: Profissional
+        unidade_medica: Unidade Médica
+      consulta:
+        data: Data
+        paciente: Paciente
+        profissional: Profissional
+        unidade_medica: Unidade Médica
+        status: Status
+      especialidade_medica:
+        nome: Nome
+        descricao: Descrição
+      paciente:
+        nome: Nome
+        email: E-mail
+        data_nascimento: Data de Nascimento
+        telefone: Telefone
+        endereco: Endereço
+      pedido:
+        descricao: Descrição
+        paciente: Paciente
+        status: Status
+      profissional:
+        nome: Nome
+        email: E-mail
+        especialidade_medica: Especialidade Médica
+        telefone: Telefone
+      profissional_unidade_medica:
+        profissional: Profissional
+        unidade_medica: Unidade Médica
+      prontuario:
+        paciente: Paciente
+        descricao: Descrição
+        data: Data
+      unidade_medica:
+        nome: Nome
+        endereco: Endereço
+        telefone: Telefone
+      usuario:
+        nome: Nome
+        email: E-mail
+        senha: Senha
+        tipo: Tipo
+      post:
+        title: Título
+        body: Corpo
+    errors:
+      messages:
+        record_invalid: "A validação falhou: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Não é possível excluir porque existe um %{record} dependente"
+          has_many: "Não é possível excluir porque existem %{record} dependentes"
+        blank: "não pode ficar em branco"
+        taken: "já está em uso"
+        too_short: "é muito curto (mínimo: %{count} caracteres)"
+        too_long: "é muito longo (máximo: %{count} caracteres)"
+        not_a_number: "não é um número"
+        confirmation: "não coincide com a confirmação"
+        invalid: "não é válido"
+        required: "é obrigatório"
+        greater_than: "deve ser maior que %{count}"
+        less_than: "deve ser menor que %{count}"
+        other_than: "deve ser diferente de %{count}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
