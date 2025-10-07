@@ -14,8 +14,8 @@ Rails.application.routes.draw do
       resources :usuarios
       resources :administradores
       resources :unidade_medicas
-      resources :agendas
       resources :profissionais do
+        resources :agendas
         resources :receitas, only: :create
       end
       resources :pacientes do
