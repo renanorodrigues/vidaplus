@@ -9,7 +9,9 @@ module Api
         render json: @pacientes
       end
     
-      def show; end
+      def show
+        render json: @paciente
+      end
     
       def create
         @paciente = Paciente.new paciente_params
@@ -41,7 +43,26 @@ module Api
       end
   
       def paciente_params
-        params.require(:paciente).permit(:nome_completo, :rg, :cpf, :sexo, :idade, :contato, :contato_emergencia, :usuario_id, :prontuario_id, endereco: [:rua, :numero, :bairro, :cidade, :estado, :cep])
+        params.require(:paciente).permit(
+          :nome_completo,
+          :rg,
+          :cpf,
+          :sexo,
+          :observacao,
+          :idade,
+          :contato,
+          :contato_emergencia,
+          :usuario_id,
+          :prontuario_id,
+          endereco: [
+            :rua,
+            :numero,
+            :bairro,
+            :cidade,
+            :estado,
+            :cep
+          ]
+        )
       end
     end
   end

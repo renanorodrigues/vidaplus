@@ -21,7 +21,9 @@ module Api
         end
       end
 
-      def show; end
+      def show
+        render json: @unidade_medica, status: :ok
+      end
 
       def update
         if @unidade_medica.update(unidade_medica_params)
