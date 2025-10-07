@@ -1,6 +1,6 @@
 module AuthHelper
   require 'jwt'
-  TOKEN_EXPIRATION_TIME = 15.minutes.from_now
+  TOKEN_EXPIRATION_TIME = 60.minutes.from_now
   SECRET_KEY = Rails.application.credentials.secret_key_base
 
   def encode_token(user)
