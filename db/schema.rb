@@ -37,16 +37,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_29_103111) do
     t.index ["unidade_medica_id"], name: "index_agendas_on_unidade_medica_id"
   end
 
-  create_table "consultas", force: :cascade do |t|
-    t.bigint "pedido_id", null: false
-    t.string "link"
-    t.integer "estado", default: 0
-    t.time "duracao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pedido_id"], name: "index_consultas_on_pedido_id"
-  end
-
   create_table "pacientes", force: :cascade do |t|
     t.string "nome_completo"
     t.string "sexo"
@@ -157,7 +147,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_29_103111) do
   add_foreign_key "administradores", "usuarios"
   add_foreign_key "agendas", "profissionais"
   add_foreign_key "agendas", "unidade_medicas"
-  add_foreign_key "consultas", "pedidos"
   add_foreign_key "pacientes", "usuarios"
   add_foreign_key "pedidos", "pacientes"
   add_foreign_key "pedidos", "profissionais"

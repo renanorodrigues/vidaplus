@@ -19,12 +19,10 @@ Rails.application.routes.draw do
       resources :profissionais do
         resources :agendas
         resources :receitas, only: :create
+        resources :prontuarios, only: :create
       end
       resources :pacientes do
-        resources :prontuarios, only: :create
-        resources :pedidos do
-          resources :consultas, only: %i[create show update]
-        end
+        resources :pedidos
       end
     end
   end
