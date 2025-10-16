@@ -1,6 +1,6 @@
-class CreatePedidos < ActiveRecord::Migration[8.0]
+class CreateConsultas < ActiveRecord::Migration[8.0]
   def change
-    create_table :pedidos do |t|
+    create_table :consultas do |t|
       t.string :observacao
       t.datetime :data_marcacao
       t.integer :estado, default: 0

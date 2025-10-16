@@ -3,6 +3,7 @@ class Profissional < ApplicationRecord
   has_many :agendas
   has_many :receitas
   has_many :unidade_medicas, through: :profissional_unidade_medicas
+  has_many :consultas
   has_paper_trail
 
   validates :nome_completo, :contato, :ocupacao, :especialidades_medicas, presence: true

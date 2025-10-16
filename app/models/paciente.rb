@@ -2,7 +2,7 @@ class Paciente < ApplicationRecord
   belongs_to :usuario
   has_many :prontuarios
   has_many :receitas
-  has_many :pedidos
+  has_many :consultas
   has_paper_trail
 
   validates :nome_completo, presence: true, length: { minimum: 2 }

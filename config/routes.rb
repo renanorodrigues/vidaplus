@@ -22,7 +22,7 @@ Rails.application.routes.draw do
         resources :prontuarios, only: :create
       end
       resources :pacientes do
-        resources :pedidos
+        resources :consultas
       end
     end
   end

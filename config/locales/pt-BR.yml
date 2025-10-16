@@ -6,7 +6,6 @@ pt-BR:
       consulta: Consulta
       especialidade_medica: Especialidade Médica
       paciente: Paciente
-      pedido: Pedido
       profissional: Profissional
       profissional_unidade_medica: Profissional da Unidade Médica
       prontuario: Prontuário
@@ -24,10 +23,8 @@ pt-BR:
         profissional: Profissional
         unidade_medica: Unidade Médica
       consulta:
-        data: Data
+        descricao: Descrição
         paciente: Paciente
-        profissional: Profissional
-        unidade_medica: Unidade Médica
         status: Status
       especialidade_medica:
         nome: Nome
@@ -38,10 +35,6 @@ pt-BR:
         data_nascimento: Data de Nascimento
         telefone: Telefone
         endereco: Endereço
-      pedido:
-        descricao: Descrição
-        paciente: Paciente
-        status: Status
       profissional:
         nome: Nome
         email: E-mail

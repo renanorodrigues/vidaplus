@@ -1,7 +1,7 @@
 class UnidadeMedica < ApplicationRecord
   has_many :pacientes
   has_many :profissionais, through: :profissional_unidade_medicas
-  has_many :pedidos
+  has_many :consultas
   has_many :agendas
   has_paper_trail
 

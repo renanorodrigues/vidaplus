@@ -37,6 +37,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_29_103111) do
     t.index ["unidade_medica_id"], name: "index_agendas_on_unidade_medica_id"
   end
 
+  create_table "consultas", force: :cascade do |t|
+    t.string "observacao"
+    t.datetime "data_marcacao"
+    t.integer "estado", default: 0
+    t.integer "tipo_consulta"
+    t.bigint "paciente_id", null: false
+    t.bigint "profissional_id", null: false
+    t.bigint "unidade_medica_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_consultas_on_paciente_id"
+    t.index ["profissional_id"], name: "index_consultas_on_profissional_id"
+    t.index ["unidade_medica_id"], name: "index_consultas_on_unidade_medica_id"
+  end
+
   create_table "pacientes", force: :cascade do |t|
     t.string "nome_completo"
     t.string "sexo"
@@ -51,21 +66,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_29_103111) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["usuario_id"], name: "index_pacientes_on_usuario_id"
-  end
-
-  create_table "pedidos", force: :cascade do |t|
-    t.string "observacao"
-    t.datetime "data_marcacao"
-    t.integer "estado", default: 0
-    t.integer "tipo_consulta"
-    t.bigint "paciente_id", null: false
-    t.bigint "profissional_id", null: false
-    t.bigint "unidade_medica_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["paciente_id"], name: "index_pedidos_on_paciente_id"
-    t.index ["profissional_id"], name: "index_pedidos_on_profissional_id"
-    t.index ["unidade_medica_id"], name: "index_pedidos_on_unidade_medica_id"
   end
 
   create_table "profissionais", force: :cascade do |t|
@@ -147,10 +147,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_29_103111) do
   add_foreign_key "administradores", "usuarios"
   add_foreign_key "agendas", "profissionais"
   add_foreign_key "agendas", "unidade_medicas"
+  add_foreign_key "consultas", "pacientes"
+  add_foreign_key "consultas", "profissionais"
+  add_foreign_key "consultas", "unidade_medicas"
   add_foreign_key "pacientes", "usuarios"
-  add_foreign_key "pedidos", "pacientes"
-  add_foreign_key "pedidos", "profissionais"
-  add_foreign_key "pedidos", "unidade_medicas"
   add_foreign_key "profissionais", "usuarios"
   add_foreign_key "profissional_unidade_medicas", "profissionais"
   add_foreign_key "profissional_unidade_medicas", "unidade_medicas"
