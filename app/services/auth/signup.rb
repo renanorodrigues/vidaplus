@@ -19,12 +19,12 @@ module Auth
     private
 
     def already_has_user_with_this_email?
-      user = ::Usuario.find_by_email(@params[:email])
-      raise StandardError, 'email já cadastrado' if user
+      user = Usuario.find_by_email(@params[:email])
+      raise StandardError, 'email já cadastrado' if user.present?
     end
 
     def create_user
-      user = ::Usuario.new(sanitize_params)
+      user = Usuario.new(sanitize_params)
       return user if user.save!
       raise StandardError, "não foi possível cadastrar o usuário: #{user.errors}"
     end

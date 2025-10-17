@@ -14,10 +14,14 @@ class AuthController < ApplicationController
   private
 
   def signin_auth_service
-    Auth::Signin.new params
+    Auth::Signin.new auth_params
   end
 
   def signup_auth_service
-    Auth::Signup.new params
+    Auth::Signup.new auth_params
+  end
+
+  def auth_params
+    params.permit(:email, :password)
   end
 end
