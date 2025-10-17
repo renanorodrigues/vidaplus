@@ -18,11 +18,12 @@ Rails.application.routes.draw do
       end
       resources :profissionais do
         resources :agendas
-        resources :receitas, only: :create
-        resources :prontuarios, only: :create
+        resources :receitas
+        resources :prontuarios
       end
       resources :pacientes do
         resources :consultas
+        resources :receitas, only: :show
       end
     end
   end
