@@ -2,11 +2,15 @@ module Api
   module V1
     class ConsultasController < AccessPermissionsController
       before_action :autentica_paciente
+      before_action :find_paciente, only: [:index, :create]
       before_action :find_consulta, only: [:show, :update, :destroy]
 
       def index
-        @consultas = Consulta.all
-        render json: @consultas
+        if @paciente.present? && @paciente.consultas.any?
+          render json: @paciente.consultas, status: :ok
+        else
+          render json: { message: 'Nenhuma consulta encontrada' }, status: :ok
+        end
       end
 
       def show
@@ -14,7 +18,7 @@ module Api
       end
 
       def create
-        @consulta = Consulta.new(consulta_params)
+        @consulta = @paciente.consultas.build(consulta_params)
         if @consulta.save
           render json: @consulta, status: :created
         else
@@ -41,13 +45,16 @@ module Api
         @consulta = Consulta.find(params[:id])
       end
 
+      def find_paciente
+        @paciente = Paciente.find(params[:paciente_id])
+      end
+
       def consulta_params
         params.require(:consulta).permit(
             :observacao,
             :data_marcacao,
             :estado,
             :tipo_consulta,
-            :paciente_id,
             :profissional_id,
             :unidade_medica_id
         )
