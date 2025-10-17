@@ -5,18 +5,18 @@ module Api
 
       def index
         @audits = audit_service.call
-        render json: @audits
+        render json: @audits, status: :ok
       end
 
       def show
-        @audit = Audit.find(params[:id])
-        render json: @audit
+        @audit = audit_service.call
+        render json: @audit, status: :ok
       end
 
       private
 
       def audit_service
-        Audit::ListEvents.new params
+        Auditoria::SearchEventos.new params
       end
     end
   end

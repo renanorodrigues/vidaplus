@@ -1,4 +1,4 @@
-module Audit
+module Auditoria
   class Presenter
     def initialize(event)
       @event = event
