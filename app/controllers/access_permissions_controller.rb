@@ -8,6 +8,8 @@ class AccessPermissionsController < ApplicationController
     define_method("autentica_#{role}") do
       unless send("#{role}?")
         render json: { error: "Acesso negado" }, status: :forbidden
+      else
+        true
       end
     end
   end
