@@ -1,7 +1,7 @@
 module Api
   module V1
     class ConsultasController < AccessPermissionsController
-      before_action :autentica_paciente
+      before_action :autentica_paciente, only: [:index, :show, :create]
       before_action :find_paciente, only: [:index, :create]
       before_action :find_consulta, only: [:show, :update, :destroy]
 
@@ -27,8 +27,9 @@ module Api
       end
 
       def update
-        if @consulta.update(consulta_params)
-          render json: @consulta
+        if permissao_de_alteracao?
+          @consulta.update(consulta_params)
+          render json: @consulta, status: :ok
         else
           render json: @consulta.errors, status: :unprocessable_entity
         end
@@ -40,6 +41,13 @@ module Api
       end
 
       private
+
+      def permissao_de_alteracao?
+        return true if params[:profissional_id].to_i == @consulta.profissional_id
+        return true if params[:paciente_id].to_i == @consulta.paciente_id
+
+        false
+      end
 
       def find_consulta
         @consulta = Consulta.find(params[:id])
