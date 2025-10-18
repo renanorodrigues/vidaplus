@@ -99,7 +99,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
    ```bash
    rails db:create
    rails db:migrate
-   rails db:seed  # (opcional)
+   rails db:seed  # (recomendado para já testar a aplicação)
    ```
 
 6. **Inicie o servidor:**
@@ -277,6 +277,11 @@ rails db:reset
 | `DB_PASSWORD` | Senha do PostgreSQL | `postgres` |
 | `DB_HOST` | Host do banco de dados | `localhost` |
 | `RAILS_MAX_THREADS` | Número máximo de threads | `5` |
+
+## Como testar
+Existe uma collection do Insomnia já pronta para testar todas as rotas do projeto. Você pode copiar o arquivo na pasta raíz deste repositório de nome: `collection_vidaplus.yaml`. Nisso, importe no Insomnia e realize seus testes! 
+Para facilitar seus testes, não deixe de executar o `rails db:seed` para já ter acesso à usuários com seus papéis configurados.
+
 
 ## 📄 Licença
 
