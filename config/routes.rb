@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         resources :agendas
         resources :receitas
         resources :prontuarios
+        resources :consultas , only: :update
       end
       resources :pacientes do
         resources :consultas
