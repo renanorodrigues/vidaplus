@@ -1,0 +1,1789 @@
+type: collection.insomnia.rest/5.0
+name: Vida Plus API
+meta:
+  id: wrk_7ec5104fce3e46c3a83250c970c24eed
+  created: 1757882487430
+  modified: 1757883778155
+  description: ""
+collection:
+  - name: Usuários
+    meta:
+      id: fld_622a0cf99842405887371179c8d59321
+      created: 1757883702886
+      modified: 1757883702886
+      sortKey: -1757883702886
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/usuarios
+        name: Cadastrar
+        meta:
+          id: req_89dcf5d991db4f0e9b1900e73c887475
+          created: 1757882487436
+          modified: 1759791926247
+          isPrivate: false
+          description: ""
+          sortKey: -1757883719116
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usuario": {
+            	  "email": "example.email3@com.br",
+            	  "password": "4343456575sfsfS"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_af1a16c7df9642c59c4619c504c53d8c
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_2ffb54bceed04b72906f7682c0d796a6
+          - id: pair_3a6cdda5fe094536ba82c4c655cb463e
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/usuarios/2
+        name: Deletar
+        meta:
+          id: req_d2942a64f444417d8c321f269b4609ff
+          created: 1757883644500
+          modified: 1759608305265
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718816
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_cc63dd04f7f14550b3aa81c81cf378e9
+          - id: pair_a31142a3c2e94ff1b14956a21e66c906
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/usuarios/2
+        name: Atualizar
+        meta:
+          id: req_96ac4ed2b9e94712ac766e156cc7e237
+          created: 1757883887202
+          modified: 1759791932287
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718866
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usuario": {
+            	  "email": "example.email2@com.br",
+            	  "password": "4343456575sfsfS144"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b3c8d6e2bd444a82afac353b0e9aa6c4
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_eb12ad8b60e8484db8f02f2f4024ddad
+          - id: pair_05d2d6325217403a8855db2de3df9e43
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/usuarios/5
+        name: Consultar
+        meta:
+          id: req_5c8c09d8ab2d4b7a9768fde155ccedbd
+          created: 1758667516559
+          modified: 1759791929689
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718941
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_b22caf17160d4725b0ad687b8e037693
+          - id: pair_46859ed0e65241218748b0aa421793f3
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/usuarios
+        name: Listar
+        meta:
+          id: req_38af2bc51eee44bba517657c10833862
+          created: 1759607709528
+          modified: 1759791906484
+          isPrivate: false
+          description: ""
+          sortKey: -1757883719016
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: Receitas
+        meta:
+          id: fld_fdae028ea90341bd860ce0c4a7611e4e
+          created: 1760741562077
+          modified: 1760741575492
+          sortKey: -1757883718716
+          description: ""
+        children:
+          - url: localhost:3000/api/v1/pacientes/1/receitas/1
+            name: Consultar
+            meta:
+              id: req_4885ba7d15f146ab9e2cd5461f4e2a4c
+              created: 1760741525553
+              modified: 1760741582494
+              isPrivate: false
+              description: ""
+              sortKey: -1760741564991
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_a5a5741dc99a471b878feb869afeb9c4
+              - id: pair_c6f558714dd44cc59481e34ec378dc76
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: Pacientes
+    meta:
+      id: fld_ae647febaa8e4680a6ffdee4b5db3e38
+      created: 1757886408496
+      modified: 1757886408496
+      sortKey: -1757886408496
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/pacientes
+        name: Cadastrar
+        meta:
+          id: req_a8131ce1b1984dc1a38f3964fc6e5e93
+          created: 1757886419163
+          modified: 1759609572978
+          isPrivate: false
+          description: ""
+          sortKey: -1757886426153
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "paciente": {
+                "nome_completo": "Maria Silva",
+                "rg": "12.345.678-2",
+                "cpf": "12345678901",
+                "sexo": "Feminino",
+                "idade": 30,
+                "contato": "11999998888",
+                "contato_emergencia": "11977776666",
+                "endereco": {
+                  "rua": "Rua das Flores",
+                  "numero": "123",
+                  "bairro": "Jardim das Rosas",
+                  "cidade": "São Paulo",
+                  "estado": "SP",
+                  "cep": "01234-567"
+                },
+            		"usuario_id": 2
+              }	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_c41c5c3fb49047c4a63e462aa18703bd
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_5802082f86a941ad8287132ba17de0e2
+          - id: pair_f57c23c849d547ac8212ed5f1a4e2f02
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/pacientes/1
+        name: Consultar
+        meta:
+          id: req_5134f854349a4e74ad36cab58b2089a4
+          created: 1758667989449
+          modified: 1759791599472
+          isPrivate: false
+          description: ""
+          sortKey: -1757886426128
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_61c3c7f260e14984b8399a2d30923d1c
+          - id: pair_d59042dfbef44bd5bbd42a195b08facc
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/pacientes/1
+        name: Atualizar
+        meta:
+          id: req_ce6e259f0ea849239e1827bd64de8d80
+          created: 1758667997134
+          modified: 1759791547868
+          isPrivate: false
+          description: ""
+          sortKey: -1757886426115.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"paciente": {
+            	  "observacao": "Paciente de teste"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_879337ed9ba442b99d02fdfa7d51ca4f
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_1a0c5fe2150a4223998f41fe34a7b20c
+          - id: pair_6f345620c1b0497a903892425b1b23c3
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/pacientes/2
+        name: Deletar
+        meta:
+          id: req_ecba890a79c14c86886f4545a5cd358e
+          created: 1758668003702
+          modified: 1759609490387
+          isPrivate: false
+          description: ""
+          sortKey: -1757886426109.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_f4465bd9ded24658b0bb9073254e50df
+          - id: pair_d05d7287176e43bf9841e5a119291ef1
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/pacientes
+        name: Listar
+        meta:
+          id: req_2a3d2f02d8ef4a0eaa987965f30d7a6c
+          created: 1759609432651
+          modified: 1759609445977
+          isPrivate: false
+          description: ""
+          sortKey: -1757886426140.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: Consultas
+        meta:
+          id: fld_2d5d8fea47084b22b18918cb1abc77ea
+          created: 1758363959041
+          modified: 1760698680673
+          sortKey: -1757886426053
+          description: ""
+        children:
+          - url: localhost:3000/api/v1/pacientes/1/consultas
+            name: Cadastrar
+            meta:
+              id: req_2bd7767ea6e3414aa060b7f5b0006233
+              created: 1758363959042
+              modified: 1760738792580
+              isPrivate: false
+              description: ""
+              sortKey: -1757886426153
+            method: POST
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "consulta": {
+                    "observacao": "Consulta de rotina 3",
+                    "data_marcacao": "2025-09-25T14:30:00Z",
+                    "tipo_consulta": "presencial",
+                    "profissional_id": 1,
+                    "unidade_medica_id": 1
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_6fa1ac83dcac40418f015b3c81745a48
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_4547f1e674574409b289b1df073758c1
+              - id: pair_70267c649c384248b5ad44c093314bd7
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/pacientes/1/consultas
+            name: Listar
+            meta:
+              id: req_dd3d8787c8874091a827ea773e17eed0
+              created: 1760738424046
+              modified: 1760738451419
+              isPrivate: false
+              description: ""
+              sortKey: -1757886426146.75
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_4547f1e674574409b289b1df073758c1
+              - id: pair_70267c649c384248b5ad44c093314bd7
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/pacientes/1/consultas/1
+            name: Consultar
+            meta:
+              id: req_3638ad2ff80640b884d3e77334a241d9
+              created: 1760738437456
+              modified: 1760738699316
+              isPrivate: false
+              description: ""
+              sortKey: -1757886426143.625
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_4547f1e674574409b289b1df073758c1
+              - id: pair_70267c649c384248b5ad44c093314bd7
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/pacientes/1/consultas/1
+            name: Atualizar
+            meta:
+              id: req_c1d0e607a0bf4564af7f28763aa29914
+              created: 1760738471095
+              modified: 1760738727875
+              isPrivate: false
+              description: ""
+              sortKey: -1757886426043.625
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "consulta": {
+                    "observacao": "Consulta de rotina 2",
+                    "data_marcacao": "2025-09-25T14:30:00Z",
+                    "tipo_consulta": "presencial",
+                    "profissional_id": 1,
+                    "unidade_medica_id": 1,
+                	  "paciente_id": 1
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_6fa1ac83dcac40418f015b3c81745a48
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_4547f1e674574409b289b1df073758c1
+              - id: pair_70267c649c384248b5ad44c093314bd7
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/pacientes/1/consultas/1
+            name: Deletar
+            meta:
+              id: req_c88b705d1f094cefa862695fa6eb56d3
+              created: 1760738490004
+              modified: 1760738736123
+              isPrivate: false
+              description: ""
+              sortKey: -1757886425943.625
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_4547f1e674574409b289b1df073758c1
+              - id: pair_70267c649c384248b5ad44c093314bd7
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: Unidades Médicas
+    meta:
+      id: fld_a38a844838df4ed1962b6b07c614f422
+      created: 1758152565561
+      modified: 1758152565561
+      sortKey: -1757890147570.5
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/unidade_medicas
+        name: Cadastrar
+        meta:
+          id: req_1c0a801581aa4388b68f57d61de26f92
+          created: 1758152565562
+          modified: 1759834751465
+          isPrivate: false
+          description: ""
+          sortKey: -1757893899405
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"unidade_medica": {
+                "nome_fantasia": "Hospital Central do Bem",
+                "cnpj": "12345678001",
+                "endereco": {
+                  "rua": "Rua das Flores",
+                  "numero": "123",
+                  "bairro": "Centro",
+                  "cidade": "Cidade Exemplo",
+                  "estado": "EX",
+                  "cep": "12345-678"
+                }
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_bb7d1011c8474905b934b9ef7179dfe3
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_c16efc4f711c4f1784dee801d687c569
+          - id: pair_54a769ce25804f64b2f0a5328dcbcac2
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/unidade_medicas
+        name: Listar
+        meta:
+          id: req_e9ff28ab069b49b6b633d54e549a71d7
+          created: 1759793316633
+          modified: 1759793377300
+          isPrivate: false
+          description: ""
+          sortKey: -1757893899305
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/unidade_medicas/1
+        name: Consultar
+        meta:
+          id: req_6b5040d9f5b54eec9f6df7d92ffc9561
+          created: 1759793332444
+          modified: 1759793393650
+          isPrivate: false
+          description: ""
+          sortKey: -1757893899205
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_61c3c7f260e14984b8399a2d30923d1c
+          - id: pair_d59042dfbef44bd5bbd42a195b08facc
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/unidade_medicas/1
+        name: Atualizar
+        meta:
+          id: req_d506328616af49acb326a079a2962c61
+          created: 1759793345374
+          modified: 1759793450430
+          isPrivate: false
+          description: ""
+          sortKey: -1757893899105
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"unidade_medica": {
+            	  "nome_fantasia": "Clenilson do Bem"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_879337ed9ba442b99d02fdfa7d51ca4f
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_1a0c5fe2150a4223998f41fe34a7b20c
+          - id: pair_6f345620c1b0497a903892425b1b23c3
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/unidade_medicas/1
+        name: Deletar
+        meta:
+          id: req_c41ed6f7c6e4444a97bf6440813c547e
+          created: 1759793357801
+          modified: 1759793509669
+          isPrivate: false
+          description: ""
+          sortKey: -1757893899005
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_f4465bd9ded24658b0bb9073254e50df
+          - id: pair_d05d7287176e43bf9841e5a119291ef1
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Profissionais
+    meta:
+      id: fld_52a9adbc31b34d9997dede0ce1ef384a
+      created: 1758364829688
+      modified: 1758364829688
+      sortKey: -1757883702836
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/profissionais
+        name: Cadastrar
+        meta:
+          id: req_d6337ecec0ab423db7f259fe371cb6ef
+          created: 1758364829689
+          modified: 1759791976090
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718916
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "profissional": {
+                "nome_completo": "Dr. João Silva 2",
+                "contato": "(11) 99999-8888",
+                "email_profissional": "joao.silva2@exemplo.com",
+                "biografia": "Médico com 10 anos de experiência em clínica geral.",
+                "ocupacao": "medico",
+            		"usuario_id": 3,
+                "especialidades_medicas": [
+                  {
+                    "especialidade": "Cardiologia",
+                    "observacao": "Especialista em hipertensão"
+                  },
+                  {
+                    "especialidade": "Geriatria",
+                    "observacao": "Atendimento domiciliar"
+                  }
+                ]
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_fe121216b12e48439fcedfd37d18631b
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_cebe116cea0248e9a4ccbf753c6b22af
+          - id: pair_225d86987d2c479bbfd283fd9d21217c
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/profissionais/2
+        name: Deletar
+        meta:
+          id: req_4747ebe1a9ca4407aa0972c09e6ced2a
+          created: 1758364829690
+          modified: 1759791984257
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718816
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_c8acfe9971cc40de9c533b7dfa031b96
+          - id: pair_07df383b14644d27804d9dd198d6fff1
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/profissionais/2
+        name: Atualizar
+        meta:
+          id: req_f07cb64a64f542a1bd2e77fa8d511d33
+          created: 1758364829691
+          modified: 1759793175438
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718866
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"profissional": {
+            	  "email_profissional": "example.email4454@com.br"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_0db8a2b9b452474f8b8ac043ef462747
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_8fa67004064e464b9c6174c0cfc98dde
+          - id: pair_ff54a07b15b648ef9e9fb4ff850d65db
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/profissionais/1
+        name: Consultar
+        meta:
+          id: req_a6397b2b2ced4fa781199433d0fab220
+          created: 1758667487750
+          modified: 1759792007246
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718891
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_a5a5741dc99a471b878feb869afeb9c4
+          - id: pair_c6f558714dd44cc59481e34ec378dc76
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/profissionais
+        name: Listar
+        meta:
+          id: req_c285b1d566634d1f92249605e2720370
+          created: 1759792510017
+          modified: 1759792551855
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718903.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_a5a5741dc99a471b878feb869afeb9c4
+          - id: pair_c6f558714dd44cc59481e34ec378dc76
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/unidade_medicas/2/profissionais
+        name: Cadastrar na Unidade Medica
+        meta:
+          id: req_87e550aeaeb2466d84226d2725c277ae
+          created: 1759834799402
+          modified: 1759834834731
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718909.75
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "profissional": {
+                "nome_completo": "Dr. João Silva 3",
+                "contato": "(11) 99999-8888",
+                "email_profissional": "joao.silva2@exemplo.com",
+                "biografia": "Médico com 10 anos de experiência em clínica geral.",
+                "ocupacao": "medico",
+            		"usuario_id": 3,
+                "especialidades_medicas": [
+                  {
+                    "especialidade": "Cardiologia",
+                    "observacao": "Especialista em hipertensão"
+                  },
+                  {
+                    "especialidade": "Geriatria",
+                    "observacao": "Atendimento domiciliar"
+                  }
+                ]
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_fe121216b12e48439fcedfd37d18631b
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_cebe116cea0248e9a4ccbf753c6b22af
+          - id: pair_225d86987d2c479bbfd283fd9d21217c
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: Prontuarios
+        meta:
+          id: fld_3465d68a564c4b90be1cce93cf965425
+          created: 1757893886645
+          modified: 1760744505595
+          sortKey: -1757883718766
+          description: ""
+        children:
+          - url: localhost:3000/api/v1/profissionais/1/prontuarios
+            name: Cadastrar
+            meta:
+              id: req_9e7a96a09a3b45fe8633e92ecebe7d5c
+              created: 1757893896168
+              modified: 1760739710601
+              isPrivate: false
+              description: ""
+              sortKey: -1757893899405
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"prontuario": {
+                    "observacao": "Paciente relata dores de cabeça frequentes.",
+                		"paciente_id": 1,
+                    "historico_clinico": {
+                      "doencas": ["Hipertensão"],
+                      "alergias": ["Penicilina"],
+                      "exames": ["Raio-X do tórax - 2023"],
+                      "medicacoes": ["Losartana 50mg"]
+                    }
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_8ae4907851e846c49a8af10cb22fb97d
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_858b433e5f724f029ddea55b74847c6b
+              - id: pair_fc0af9eba2bc43c6a413845c87dc903e
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/prontuarios/1
+            name: Consultar
+            meta:
+              id: req_c59b23cfc1554b03926e80675ea36acf
+              created: 1760739731404
+              modified: 1760739743961
+              isPrivate: false
+              description: ""
+              sortKey: -1757893899355
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_858b433e5f724f029ddea55b74847c6b
+              - id: pair_fc0af9eba2bc43c6a413845c87dc903e
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/prontuarios/1
+            name: Atualizar
+            meta:
+              id: req_d441b374244445d6a11db6e8bc9c7bb3
+              created: 1760739755298
+              modified: 1760739901743
+              isPrivate: false
+              description: ""
+              sortKey: -1757893899255
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"prontuario": {
+                    "observacao": "Paciente relata dores de cabeça.",
+                		"paciente_id": 1,
+                    "historico_clinico": {
+                      "doencas": ["Hipertensão"],
+                      "alergias": ["Penicilina"],
+                      "exames": ["Raio-X do tórax - 2023"],
+                      "medicacoes": ["Losartana 50mg"]
+                    }
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_8ae4907851e846c49a8af10cb22fb97d
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_858b433e5f724f029ddea55b74847c6b
+              - id: pair_fc0af9eba2bc43c6a413845c87dc903e
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/prontuarios/1
+            name: Deletar
+            meta:
+              id: req_cfa9750656574e18940a900cf5cbd0d0
+              created: 1760739775809
+              modified: 1760739780532
+              isPrivate: false
+              description: ""
+              sortKey: -1757893899155
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_858b433e5f724f029ddea55b74847c6b
+              - id: pair_fc0af9eba2bc43c6a413845c87dc903e
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Agendas
+        meta:
+          id: fld_ccb56769e3114b989cd450ec25dab914
+          created: 1759793959162
+          modified: 1759794470625
+          sortKey: -1757883718716
+          description: ""
+        children:
+          - url: localhost:3000/api/v1/profissionais/1/agendas
+            name: Cadastrar
+            meta:
+              id: req_e9487a0ac5b749c8b21684c11075b92c
+              created: 1759793959163
+              modified: 1760698134806
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718916
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "agenda": {
+                    "data_inicio": "2025-11-01T09:00:00Z",
+                    "data_termino": "2025-11-01T17:00:00Z",
+                    "observacao": "Agenda especial para retornos e exames.",
+                    "estado": "pendente",
+                    "profissional_id": 1,
+                    "unidade_medica_id": 1,
+                    "horarios": [
+                      {
+                        "dias_da_semana": ["terça", "quinta"],
+                        "horarios": ["09:00", "11:00", "15:00"],
+                        "duracao_agenda_minutos": [20, 20, 20]
+                      }
+                    ]
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_fe121216b12e48439fcedfd37d18631b
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_cebe116cea0248e9a4ccbf753c6b22af
+              - id: pair_225d86987d2c479bbfd283fd9d21217c
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/agendas/1
+            name: Deletar
+            meta:
+              id: req_3d39d07c7d78475e87fb0baf42527668
+              created: 1759793959164
+              modified: 1759794547467
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718816
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_c8acfe9971cc40de9c533b7dfa031b96
+              - id: pair_07df383b14644d27804d9dd198d6fff1
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/agendas/1
+            name: Atualizar
+            meta:
+              id: req_8162554bdf8d4ac9aa8a74c9b61868e1
+              created: 1759793959165
+              modified: 1760744108817
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718866
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"agenda": {
+                	  "observacao": "Agenda do Dr. João para consultas legais"
+                	}
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_0db8a2b9b452474f8b8ac043ef462747
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_8fa67004064e464b9c6174c0cfc98dde
+              - id: pair_ff54a07b15b648ef9e9fb4ff850d65db
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/agendas/1
+            name: Consultar
+            meta:
+              id: req_b2cac8bb569b47f0a8c6f940ac5dcb54
+              created: 1759793959167
+              modified: 1759795203877
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718891
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_a5a5741dc99a471b878feb869afeb9c4
+              - id: pair_c6f558714dd44cc59481e34ec378dc76
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/agendas
+            name: Listar
+            meta:
+              id: req_c8a706b98782493faa29629e33d37f9b
+              created: 1759793959168
+              modified: 1759794531069
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718903.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_a5a5741dc99a471b878feb869afeb9c4
+              - id: pair_c6f558714dd44cc59481e34ec378dc76
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Receitas
+        meta:
+          id: fld_7e27e2e1b2cc4af8a6a9d36721fa280a
+          created: 1760741030715
+          modified: 1760741030715
+          sortKey: -1757883710801
+          description: ""
+        children:
+          - url: localhost:3000/api/v1/profissionais/1/receitas
+            name: Cadastrar
+            meta:
+              id: req_12ba1eb396434eec8df06f9870251f66
+              created: 1760741030717
+              modified: 1760741164068
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718916
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                  "receita": {
+                    "observacao": "Paciente com quadro de hipertensão leve. Recomendado controle de pressão arterial diário.",
+                    "paciente_id": 1,
+                    "prescricao": [
+                      {
+                        "medicamento": "Losartana Potássica",
+                        "dosagem": "50mg",
+                        "frequencia": "1 vez ao dia",
+                        "duracao": "30 dias",
+                        "via": "oral"
+                      },
+                      {
+                        "medicamento": "Ácido Acetilsalicílico",
+                        "dosagem": "100mg",
+                        "frequencia": "1 vez ao dia pela manhã",
+                        "duracao": "uso contínuo",
+                        "via": "oral"
+                      }
+                    ]
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_fe121216b12e48439fcedfd37d18631b
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_cebe116cea0248e9a4ccbf753c6b22af
+              - id: pair_225d86987d2c479bbfd283fd9d21217c
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/receitas/1
+            name: Deletar
+            meta:
+              id: req_ecb33c213fe54c86b98d3796182ba04c
+              created: 1760741030718
+              modified: 1760741051598
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718816
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_c8acfe9971cc40de9c533b7dfa031b96
+              - id: pair_07df383b14644d27804d9dd198d6fff1
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/receitas/1
+            name: Atualizar
+            meta:
+              id: req_38559bec0f154af6904ec0ffd60126f4
+              created: 1760741030720
+              modified: 1760741317692
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718866
+            method: PUT
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                  "receita": {
+                    "observacao": "Paciente com quadro de hipertensão leve. Recomendado controle de pressão arterial diário.",
+                    "paciente_id": 1,
+                    "profissional_id": 1,
+                    "prescricao": [
+                      {
+                        "medicamento": "Losartana Potássica",
+                        "dosagem": "50mg",
+                        "frequencia": "2 vezes ao dia",
+                        "duracao": "30 dias",
+                        "via": "oral"
+                      },
+                      {
+                        "medicamento": "Ácido Acetilsalicílico",
+                        "dosagem": "100mg",
+                        "frequencia": "1 vez ao dia pela manhã",
+                        "duracao": "uso contínuo",
+                        "via": "oral"
+                      }
+                    ]
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_0db8a2b9b452474f8b8ac043ef462747
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_8fa67004064e464b9c6174c0cfc98dde
+              - id: pair_ff54a07b15b648ef9e9fb4ff850d65db
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: localhost:3000/api/v1/profissionais/1/receitas/1
+            name: Consultar
+            meta:
+              id: req_52ec2910e0104e0aa0b2649b7cff61a6
+              created: 1760741030720
+              modified: 1760741047096
+              isPrivate: false
+              description: ""
+              sortKey: -1757883718891
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.0
+                id: pair_a5a5741dc99a471b878feb869afeb9c4
+              - id: pair_c6f558714dd44cc59481e34ec378dc76
+                name: Authorization
+                value: "{{token}}"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: Administradores
+    meta:
+      id: fld_bd71acdf71424aa1932393d84543a80b
+      created: 1758666742715
+      modified: 1760693486332
+      sortKey: -1757883702786
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/administradores
+        name: Cadastrar
+        meta:
+          id: req_1afa69d402b245deb7c8be7cac674e22
+          created: 1758666742715
+          modified: 1760693492908
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718916
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "administrador": {
+                "nome_completo": "João da Silva 2",
+                "contato": "11999999999",
+                "usuario_id": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_050c733e085740b0b3e70dcecf79c9f5
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_6259e8594ffe4be9a9ed34aae62f9bdf
+          - id: pair_6995dc61caf34bffb7577cbfb2b7f5be
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/administradores/2
+        name: Deletar
+        meta:
+          id: req_4c57795843ff4caf814c90af558d5b4c
+          created: 1758666742716
+          modified: 1759187433491
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718816
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_0bf26587ac0b4c24914ccc463eb75a92
+          - id: pair_d2112881be8d44e2a86bc57f56305802
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/administradores/1
+        name: Atualizar
+        meta:
+          id: req_b368a82529fa486ca2efa56138480ee5
+          created: 1758666742716
+          modified: 1759186390064
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718866
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "administrador": {
+                "contato": "11999999996"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_99faed51633b4cc2ad432726393720c8
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_d0f8eb4b37734a1aabccacedfbb300d4
+          - id: pair_f3d899bb733a40308215161967f59949
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/administradores/1
+        name: Consultar
+        meta:
+          id: req_07b2437450834eb6951321a49a117ee0
+          created: 1758667453631
+          modified: 1759186381021
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718891
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/administradores
+        name: Listar
+        meta:
+          id: req_22bc14943dfc446a8815b257edb65f9f
+          created: 1759083868387
+          modified: 1759186374985
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718903.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Autenticação
+    meta:
+      id: fld_287d0cf48d5c45e68046a39b8a4cd2ae
+      created: 1759005380723
+      modified: 1759005471535
+      sortKey: -1759005380723
+      description: ""
+    children:
+      - url: localhost:3000/auth/signin
+        name: Signin
+        meta:
+          id: req_61a0adbba00c4f8dab216b70185efb58
+          created: 1759005384166
+          modified: 1760744057838
+          isPrivate: false
+          description: ""
+          sortKey: -1759005384166
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "profissional@vidaplus.com",
+            	"password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/auth/signup
+        name: Signup
+        meta:
+          id: req_343e4672cbb94b09a5106a8e21ed3835
+          created: 1759005798230
+          modified: 1760693217558
+          isPrivate: false
+          description: ""
+          sortKey: -1758449641785.5
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "example.email_prof@com.br",
+            	"password": "4343456575"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Auditoria
+    meta:
+      id: fld_ee7d3eb6701b4598b3764626fba5197b
+      created: 1759529174731
+      modified: 1759529174731
+      sortKey: -1757883702736
+      description: ""
+    children:
+      - url: localhost:3000/api/v1/auditorias/1
+        name: Consultar
+        meta:
+          id: req_67e3516fc99b45d8ad6d6014e08ae977
+          created: 1759529174739
+          modified: 1759529431811
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718891
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/auditorias
+        name: Listar
+        meta:
+          id: req_9273a4955bca455fa1d364b22e18bff6
+          created: 1759529174739
+          modified: 1759793229531
+          isPrivate: false
+          description: ""
+          sortKey: -1757883718903.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.0
+            id: pair_af5dc061444349ad9ba307300d3511e3
+          - id: pair_3e61b8b8b9514507bb6e3318bd654f1f
+            name: Authorization
+            value: "{{token}}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7cc713c345dc53235a438fb757a2133372c0ea5b
+    created: 1757882487432
+    modified: 1757882487432
+environments:
+  name: Base Environment
+  meta:
+    id: env_7cc713c345dc53235a438fb757a2133372c0ea5b
+    created: 1757882487431
+    modified: 1760744067156
+    isPrivate: false
+  data:
+    paciente_id: "2"
+    usuario_id: "2"
+    profissional_id: "2"
+    unidade_medica_id: "1"
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE3NjA3NDc2NTl9.6_r4TYWy2LJYeLYcFc4FqTqQ1RdDvY2gYDi43myE354
